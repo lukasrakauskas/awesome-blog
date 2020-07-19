@@ -1,0 +1,53 @@
+main {
+  padding: 0 20px;
+}
+
+.edit-post {
+  margin-top: 20px;
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 20px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  margin-bottom: 15px;
+
+  h2 {
+    margin: 0;
+    margin-bottom: 10px;
+  }
+
+  label,
+  input,
+  textarea {
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  label,
+  input {
+    font-size: 1.25em;
+  }
+
+  input {
+    border: none;
+    border-bottom: 1px solid #2c3e50;
+    transition: all 0.2s;
+  }
+
+  textarea {
+    resize: vertical;
+    height: 30vh;
+    border: 1px solid #2c3e50;
+    transition: all 0.2s;
+  }
+
+  .error {
+    margin-bottom: 10px;
+  }
+
+  input:disabled,
+  textarea:disabled,
+  button:disabled {
+    background-color: #bdc3c7;
+  }
+}

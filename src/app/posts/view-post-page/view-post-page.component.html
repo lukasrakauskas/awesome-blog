@@ -1,0 +1,10 @@
+<main class="container">
+  <app-post
+    *ngIf="!this.loading"
+    [post]="post"
+    (deletePost)="deletePost()"
+  ></app-post>
+  <div *ngIf="this.loading">
+    <img class="spinner" src="/assets/tail-spin.svg" />
+  </div>
+</main>

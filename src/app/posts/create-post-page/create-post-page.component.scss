@@ -1,0 +1,44 @@
+main {
+  padding: 0 20px;
+}
+
+.create-post {
+  margin-top: 20px;
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 20px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  margin-bottom: 15px;
+
+  h2 {
+    margin: 0;
+    margin-bottom: 10px;
+  }
+
+  label,
+  input,
+  textarea {
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  label,
+  input {
+    font-size: 1.25em;
+  }
+
+  input {
+    border: none;
+    border-bottom: 1px solid #000;
+  }
+
+  textarea {
+    resize: vertical;
+    height: 30vh;
+  }
+
+  .error {
+    margin-bottom: 10px;
+  }
+}

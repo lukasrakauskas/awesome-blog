@@ -1,0 +1,72 @@
+main {
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+}
+
+h4 {
+  font-size: 1.5em;
+  margin: 0.83em 0;
+}
+
+.category-section {
+  min-width: 140px;
+  margin-bottom: 10px;
+
+  p {
+    margin: 0;
+  }
+}
+
+.categories ul {
+  margin: 0;
+  list-style: none;
+  li {
+    user-select: none;
+  }
+}
+
+.category-list {
+  padding: 0;
+}
+
+.posts-section {
+  flex: 1;
+}
+
+.pagination ::ng-deep .ngx-pagination {
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+
+  .current {
+    background: #2980b9;
+  }
+
+  li,
+  li a {
+    border-radius: 50%;
+  }
+
+  .pagination-previous,
+  .pagination-next {
+    border-radius: 5px;
+    width: 110px;
+    text-align: center;
+
+    a {
+      border-radius: 5px;
+    }
+  }
+}
+
+@media (min-width: 576px) {
+  main {
+    flex-direction: row;
+  }
+
+  aside {
+    margin-right: 15px;
+  }
+}

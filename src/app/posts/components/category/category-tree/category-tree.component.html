@@ -1,0 +1,42 @@
+<div class="categories">
+  <ul class="category-list">
+    <li *ngFor="let year of categories">
+      <span
+        *ngIf="year.hasNodes()"
+        [class.caret-down]="!year.collapsed"
+        class="caret"
+        (click)="year.toggleCollapsed()"
+      >
+        &#9654;
+      </span>
+      <span *ngIf="!year.hasNodes()" class="caret-placeholder"></span>
+      <span (click)="year.toggleChecked(); categoryChanged.emit()">
+        <input type="checkbox" [checked]="year.checked" />{{ year.text }}
+      </span>
+      <ul *ngIf="year.hasNodes() && !year.collapsed">
+        <li *ngFor="let month of year.nodes">
+          <span
+            *ngIf="month.hasNodes()"
+            [class.caret-down]="!month.collapsed"
+            class="caret"
+            (click)="month.toggleCollapsed()"
+          >
+            &#9654;
+          </span>
+          <span *ngIf="!month.hasNodes()" class="caret-placeholder"></span>
+          <span (click)="month.toggleChecked(); categoryChanged.emit()">
+            <input type="checkbox" [checked]="month.checked" />{{ month.text }}
+          </span>
+          <ul *ngIf="month.hasNodes() && !month.collapsed">
+            <li *ngFor="let day of month.nodes">
+              <span (click)="day.toggleChecked(); categoryChanged.emit()">
+                <span *ngIf="!day.hasNodes()" class="caret-placeholder"></span>
+                <input type="checkbox" [checked]="day.checked" />{{ day.text }}
+              </span>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>

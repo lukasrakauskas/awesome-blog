@@ -1,0 +1,30 @@
+.categories ul {
+  margin: 0;
+  list-style: none;
+  li {
+    user-select: none;
+  }
+}
+
+.category-list {
+  padding: 0;
+}
+
+.caret {
+  text-align: center;
+  vertical-align: center;
+  display: inline-block;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  user-select: none;
+}
+
+.caret-down {
+  transform: rotate(90deg);
+}
+
+.caret-placeholder {
+  display: inline-block;
+  width: 20px;
+}

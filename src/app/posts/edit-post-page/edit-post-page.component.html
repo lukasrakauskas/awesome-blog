@@ -1,0 +1,48 @@
+<main class="container">
+  <div class="edit-post">
+    <h2>Edit Post</h2>
+    <form [formGroup]="postForm" (ngSubmit)="onSubmit(postForm.value)">
+      <div>
+        <label for="title">Title</label>
+        <input
+          id="title"
+          type="text"
+          formControlName="title"
+          [attr.disabled]="this.loading ? '' : null"
+        />
+        <div
+          class="error color-danger"
+          *ngIf="submitted && controls.title.errors"
+        >
+          <div *ngIf="controls.title.errors.required">
+            Title is required.
+          </div>
+        </div>
+      </div>
+      <div>
+        <label for="title">Body</label>
+        <textarea
+          id="body"
+          type="body"
+          formControlName="body"
+          [attr.disabled]="this.loading ? '' : null"
+        ></textarea>
+        <div
+          class="error color-danger"
+          *ngIf="submitted && controls.body.errors"
+        >
+          <div *ngIf="controls.body.errors.required">
+            Body is required.
+          </div>
+        </div>
+      </div>
+      <button
+        class="button"
+        type="submit"
+        [attr.disabled]="this.loading ? '' : null"
+      >
+        Save
+      </button>
+    </form>
+  </div>
+</main>

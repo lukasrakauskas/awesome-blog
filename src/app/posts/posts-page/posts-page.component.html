@@ -1,0 +1,57 @@
+<main class="container">
+  <aside>
+    <h4>Categories</h4>
+    <div class="category-section box">
+      <div class="categories" *ngIf="!this.loading">
+        <p>Iterative</p>
+        <span (click)="rootCategory.toggleChecked(); filterByCategories()"
+          ><input [checked]="rootCategory.checked" type="checkbox" /> All</span
+        >
+        <app-category-tree
+          [categories]="rootCategory.nodes"
+          (categoryChanged)="filterByCategories()"
+        ></app-category-tree>
+      </div>
+    </div>
+    <div class="category-section box">
+      <div class="categories" *ngIf="!this.loading">
+        <p>Recursive</p>
+        <span (click)="rootCategory.toggleChecked(); filterByCategories()"
+          ><input [checked]="rootCategory.checked" type="checkbox" /> All</span
+        >
+        <ul class="category-list">
+          <app-recursive-tree-node
+            [category]="rootCategory"
+            (categoryChanged)="filterByCategories()"
+          ></app-recursive-tree-node>
+        </ul>
+      </div>
+    </div>
+  </aside>
+  <section class="posts-section">
+    <h2>Posts</h2>
+    <div class="posts" *ngIf="!this.loading">
+      <div *ngIf="filteredPosts.length !== 0">
+        <app-post
+          *ngFor="
+            let post of filteredPosts
+              | paginate: { itemsPerPage: 10, currentPage: page }
+          "
+          [post]="post"
+          (deletePost)="deletePost(post.id)"
+          [partialBody]="true"
+        ></app-post>
+        <pagination-controls
+          class="pagination"
+          (pageChange)="page = $event"
+        ></pagination-controls>
+      </div>
+      <div class="no-posts box" *ngIf="filteredPosts.length === 0">
+        Sorry, no posts available. :(
+      </div>
+    </div>
+    <div *ngIf="this.loading">
+      <img class="spinner" src="/assets/tail-spin.svg" />
+    </div>
+  </section>
+</main>

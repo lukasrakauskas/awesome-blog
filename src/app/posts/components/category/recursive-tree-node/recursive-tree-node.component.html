@@ -1,0 +1,22 @@
+<li *ngFor="let newCategory of category.nodes">
+  <span
+    *ngIf="newCategory.hasNodes()"
+    [class.caret-down]="!newCategory.collapsed"
+    class="caret"
+    (click)="newCategory.toggleCollapsed()"
+  >
+    &#9654;
+  </span>
+  <span *ngIf="!newCategory.hasNodes()" class="caret-placeholder"></span>
+  <span (click)="newCategory.toggleChecked(); categoryChanged.emit()">
+    <input type="checkbox" [checked]="newCategory.checked" />{{
+      newCategory.text
+    }}
+  </span>
+  <ul *ngIf="newCategory.hasNodes() && !newCategory.collapsed">
+    <app-recursive-tree-node
+      (categoryChanged)="categoryChanged.emit()"
+      [category]="newCategory"
+    ></app-recursive-tree-node>
+  </ul>
+</li>
