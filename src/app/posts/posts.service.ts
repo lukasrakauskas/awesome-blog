@@ -12,7 +12,7 @@ function sleep(ms: number) {
 export class PostsService {
   private getNextId(): number {
     const lastId = parseInt(localStorage.getItem('lastId'), 10) + 1;
-    if (lastId != null) {
+    if (localStorage.getItem('lastId') != null) {
       localStorage.setItem('lastId', `${lastId}`);
       return lastId;
     }
