@@ -1,6 +1,6 @@
 # Awesome Blog
 
-This project an example blog project. Hosted example at https://github.com/angular/angular-cli
+This project an example blog project. Hosted example at https://confident-wing-4240b0.netlify.app/
 
 Generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.3.
 
@@ -14,8 +14,8 @@ Make sure you have installed all of the following prerequisites on your developm
 ## Installation
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/PROJECT_TITLE
-cd PROJECT_TITLE
+git clone https://github.com/lukasrakauskas/awesome-blog
+cd awesome-blog
 npm install
 ```
 
